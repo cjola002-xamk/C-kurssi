@@ -46,7 +46,7 @@ int main(void){
 //Jos osumia löytyy, kirjataan osumamäärä muuttujaan osumat. Jos ei niin kirjoitetaan nimi uuteen temppitiedostoon joka nimetään lopussa alkuperäisen nimellä.
         while((fgets(nimi, 63, avattava_tied)) != NULL){
 
-            if(strstr(nimi, etunimi) == NULL && strstr(nimi, sukunimi) == NULL){
+            if((strstr(nimi, etunimi) == NULL && strstr(nimi, sukunimi) == NULL) || ((strstr(nimi, etunimi) == NULL || strstr(nimi, sukunimi) == NULL))){
                 fprintf(kirj_tied, "%s", nimi);
             }
             else{
